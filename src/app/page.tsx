@@ -26,7 +26,7 @@ export default function Page() {
             {/* Left: text + form */}
             <div className="flex flex-col px-6 py-5 sm:px-8 sm:py-6">
               <div className="flex items-center justify-center mb-3">
-                <HharaLogo className="h-8 w-auto" />
+                <HharaLogo className="h-14 w-auto" />
               </div>
 
               <p className="mb-1.5 flex items-baseline justify-center gap-1.5 text-gold">
