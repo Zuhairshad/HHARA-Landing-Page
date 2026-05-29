@@ -7,9 +7,9 @@ const HERO_IMAGE =
 
 export default function Page() {
   return (
-    <main className="flex h-screen w-full flex-col overflow-hidden bg-cream">
+    <main className="flex min-h-screen w-full flex-col bg-cream">
       {/* Hero */}
-      <section className="relative flex-1 min-h-0 w-full overflow-hidden">
+      <section className="relative flex-1 w-full">
         <div
           aria-hidden="true"
           className="absolute inset-0 bg-cover bg-center"
@@ -21,8 +21,8 @@ export default function Page() {
         />
 
         {/* Card */}
-        <div className="relative z-10 flex h-full w-full items-center justify-center px-4 py-4 sm:px-6 sm:py-6">
-          <div className="group grid w-full max-w-[980px] max-h-full grid-cols-1 overflow-hidden bg-cream shadow-[0_20px_60px_-15px_rgba(58,36,22,0.45)] ring-1 ring-bark/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_30px_80px_-10px_rgba(58,36,22,0.55)] md:grid-cols-2">
+        <div className="relative z-10 flex min-h-[calc(100vh-2.5rem)] w-full items-center justify-center px-4 py-6 sm:px-6 sm:py-8">
+          <div className="group grid w-full max-w-[980px] grid-cols-1 overflow-hidden bg-cream shadow-[0_20px_60px_-15px_rgba(58,36,22,0.45)] ring-1 ring-bark/5 transition-all duration-500 ease-out hover:-translate-y-1 hover:shadow-[0_30px_80px_-10px_rgba(58,36,22,0.55)] md:grid-cols-2">
             {/* Left: text + form */}
             <div className="flex flex-col px-6 py-5 sm:px-8 sm:py-6">
               <div className="flex items-center justify-center mb-3">
