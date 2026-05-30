@@ -62,7 +62,7 @@ export function EarlyAccessForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-3 w-full min-h-[48px] bg-bark text-cream-off text-[10px] font-medium tracking-cta uppercase transition-colors duration-300 ease-out hover:bg-zinfandel disabled:opacity-60 disabled:cursor-not-allowed"
+        className="mt-3 w-full min-h-[48px] px-4 bg-bark text-cream-off text-[10px] font-medium tracking-[0.32em] sm:tracking-cta uppercase transition-colors duration-300 ease-out hover:bg-zinfandel disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {pending ? "Joining…" : "Join the HHARA Circle"}
       </button>
