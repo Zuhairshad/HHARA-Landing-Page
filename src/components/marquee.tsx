@@ -6,6 +6,7 @@ const items = [
   "Made for the exceptional, intentional woman",
   "Global shipping",
   "She is Wonder",
+  "Dahlia Moxie Trading L.L.C Company",
 ];
 
 export function Marquee() {
