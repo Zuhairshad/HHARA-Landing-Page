@@ -5,8 +5,7 @@ import { HharaLogo } from "@/components/hhara-logo";
 import { EarlyAccessForm } from "@/components/early-access-form";
 import { Marquee } from "@/components/marquee";
 
-const HERO_IMAGE =
-  "https://images.unsplash.com/photo-1518611012118-696072aa579a?auto=format&fit=crop&w=2000&q=85";
+const HERO_IMAGE = "/hero.png";
 
 export default function Page() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -72,14 +71,14 @@ export default function Page() {
         />
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-gradient-to-br from-bark/55 via-ink/35 to-bark/55"
+          className="absolute inset-0 bg-gradient-to-br from-bark/35 via-ink/20 to-bark/35"
         />
 
         {/* Card */}
         <div className="relative z-10 flex min-h-[calc(100vh-2.5rem)] w-full items-center justify-center px-4 sm:px-6 pt-[20px] pb-[10px]">
           <div
             ref={cardRef}
-            className="group grid w-full max-w-[760px] grid-cols-1 overflow-hidden bg-cream shadow-[0_20px_60px_-15px_rgba(58,36,22,0.45)] ring-1 ring-bark/5 transition-shadow duration-500 ease-out will-change-transform hover:shadow-[0_30px_80px_-10px_rgba(58,36,22,0.55)] md:grid-cols-2"
+            className="group grid w-full max-w-[760px] grid-cols-1 overflow-hidden bg-cream/85 backdrop-blur-md shadow-[0_20px_60px_-15px_rgba(58,36,22,0.45)] ring-1 ring-bark/5 transition-shadow duration-500 ease-out will-change-transform hover:shadow-[0_30px_80px_-10px_rgba(58,36,22,0.55)] md:grid-cols-2"
           >
             {/* Left: text + form */}
             <div className="flex flex-col px-6 py-5 sm:px-8 sm:py-6">
@@ -87,18 +86,11 @@ export default function Page() {
                 <HharaLogo className="h-12 w-auto" />
               </div>
 
-              <p className="flex items-center gap-2 text-gold">
-                <span aria-hidden="true" className="inline-block h-px w-5 bg-gold" />
-                <span className="font-sans font-semibold uppercase tracking-[0.32em] text-[10px]">
-                  Early Access
-                </span>
-              </p>
-
-              <p className="mt-2 mb-1 flex items-baseline gap-2 text-gold">
-                <span className="font-sans font-bold uppercase tracking-[0.20em] text-[15px]">
+              <p className="mb-1 flex items-baseline gap-2">
+                <span className="font-sans font-bold uppercase tracking-[0.20em] text-[15px] text-gold">
                   Unapologetically
                 </span>
-                <span className="font-serif font-light italic text-[30px] leading-none">
+                <span className="font-serif font-semibold italic text-[30px] leading-none text-bark">
                   You.
                 </span>
               </p>
@@ -150,15 +142,18 @@ export default function Page() {
             </div>
 
             {/* Right: same hero image */}
-            <div className="relative hidden overflow-hidden bg-cream-3 md:block">
+            <div
+              className="relative hidden overflow-hidden md:block"
+              style={{ backgroundColor: "#756656" }}
+            >
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-cover bg-center transition-transform duration-700 ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-[1.03]"
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-[1.03]"
                 style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
               />
               <div
                 aria-hidden="true"
-                className="absolute inset-0 bg-gradient-to-t from-bark/30 via-transparent to-transparent"
+                className="absolute inset-0 bg-gradient-to-t from-bark/25 via-transparent to-transparent"
               />
               <div className="absolute bottom-5 right-5">
                 <p className="font-sans font-bold uppercase tracking-[0.32em] text-cream-off text-[12px] drop-shadow">

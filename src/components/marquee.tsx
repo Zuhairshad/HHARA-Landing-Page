@@ -4,7 +4,7 @@ const items = [
   "Every piece gives back",
   "Sustainable luxury athleisure",
   "Made for the exceptional, intentional woman",
-  "Proudly She",
+  "She is Wonder",
 ];
 
 export function Marquee() {
