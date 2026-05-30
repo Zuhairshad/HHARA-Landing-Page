@@ -4,6 +4,7 @@ const items = [
   "Every piece gives back",
   "Sustainable luxury athleisure",
   "Made for the exceptional, intentional woman",
+  "Global shipping",
   "She is Wonder",
 ];
 

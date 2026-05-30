@@ -79,7 +79,7 @@ export default function Page() {
         />
 
         {/* Card */}
-        <div className="relative z-10 flex min-h-[calc(100vh-2.5rem)] w-full items-center justify-center px-4 sm:px-6 pt-[20px] pb-[10px]">
+        <div className="relative z-10 flex min-h-[calc(100vh-2.5rem)] w-full items-center justify-center px-10 sm:px-6 pt-8 pb-6 sm:pt-[20px] sm:pb-[10px]">
           <div
             ref={cardRef}
             className="group grid w-full max-w-[800px] grid-cols-1 overflow-hidden bg-cream/85 backdrop-blur-md shadow-[0_20px_60px_-15px_rgba(58,36,22,0.45)] ring-1 ring-bark/5 transition-shadow duration-500 ease-out will-change-transform hover:shadow-[0_30px_80px_-10px_rgba(58,36,22,0.55)] md:grid-cols-2"
