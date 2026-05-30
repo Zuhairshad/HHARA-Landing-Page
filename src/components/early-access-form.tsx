@@ -67,7 +67,7 @@ export function EarlyAccessForm() {
         {pending ? "Joining…" : "Join the HHARA Circle"}
       </button>
 
-      <p className="mt-1.5 text-left font-sans font-light text-[10px] leading-[1.4] tracking-[0.03em] text-warm">
+      <p className="mt-1.5 text-center font-sans font-light text-[9px] leading-[1.4] tracking-[0.03em] text-warm">
         By joining, you agree to receive emails from HHARA. Unsubscribe anytime.
       </p>
     </form>

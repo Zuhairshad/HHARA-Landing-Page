@@ -5,7 +5,8 @@ import { HharaLogo } from "@/components/hhara-logo";
 import { EarlyAccessForm } from "@/components/early-access-form";
 import { Marquee } from "@/components/marquee";
 
-const HERO_IMAGE = "/hero.png";
+const HERO_BG = "/hero-bg.jpg";
+const FORM_IMAGE = "/hero.png";
 
 export default function Page() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -66,8 +67,11 @@ export default function Page() {
       <section className="relative flex-1 w-full">
         <div
           aria-hidden="true"
-          className="absolute inset-0 bg-cover bg-center"
-          style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
+          className="absolute inset-0 bg-no-repeat bg-center"
+          style={{
+            backgroundImage: `url('${HERO_BG}')`,
+            backgroundSize: "123% 100%",
+          }}
         />
         <div
           aria-hidden="true"
@@ -115,7 +119,7 @@ export default function Page() {
                 without compromise.
               </p>
 
-              <p className="mt-1.5 text-left font-serif font-light italic text-[13px] tracking-[0.02em] text-gold">
+              <p className="mt-1.5 text-center font-serif font-light italic text-[13px] tracking-[0.02em] text-gold">
                 Fashion with purpose. Every piece gives back.
               </p>
 
@@ -149,7 +153,7 @@ export default function Page() {
               <div
                 aria-hidden="true"
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-700 ease-[cubic-bezier(.25,.46,.45,.94)] group-hover:scale-[1.03]"
-                style={{ backgroundImage: `url('${HERO_IMAGE}')` }}
+                style={{ backgroundImage: `url('${FORM_IMAGE}')` }}
               />
               <div
                 aria-hidden="true"
