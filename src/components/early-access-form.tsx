@@ -13,7 +13,7 @@ export function EarlyAccessForm() {
 
   if (state.status === "success") {
     return (
-      <div className="py-3 text-center">
+      <div className="py-3 text-left">
         <p className="font-serif italic text-ink text-xl">
           Welcome to the HHARA Circle.
         </p>
@@ -25,32 +25,35 @@ export function EarlyAccessForm() {
   }
 
   return (
-    <form action={formAction} className="flex flex-col" noValidate>
-      <Field
+    <form action={formAction} className="flex flex-col gap-3" noValidate>
+      <LabeledField
+        label="First Name"
         name="first_name"
         type="text"
-        placeholder="First name"
+        placeholder="Your first name"
         autoComplete="given-name"
         required
       />
-      <DateField
+      <LabeledField
+        label="Email Address"
+        name="email"
+        type="email"
+        placeholder="you@example.com"
+        autoComplete="email"
+        required
+      />
+      <LabeledDateField
+        label="Date of Birth"
         name="date_of_birth"
         autoComplete="bday"
         required
         max={today()}
       />
-      <Field
-        name="email"
-        type="email"
-        placeholder="Email address"
-        autoComplete="email"
-        required
-      />
 
       {state.status === "error" && (
         <p
           role="alert"
-          className="mt-2 font-serif italic text-zinfandel text-[13px]"
+          className="mt-1 font-serif italic text-zinfandel text-[13px]"
         >
           {state.message}
         </p>
@@ -59,47 +62,49 @@ export function EarlyAccessForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-5 w-full min-h-[48px] bg-gold text-cream-off text-[10px] font-medium tracking-cta uppercase transition-colors duration-300 ease-out hover:bg-zinfandel disabled:opacity-60 disabled:cursor-not-allowed"
+        className="mt-3 w-full min-h-[48px] bg-bark text-cream-off text-[10px] font-medium tracking-cta uppercase transition-colors duration-300 ease-out hover:bg-zinfandel disabled:opacity-60 disabled:cursor-not-allowed"
       >
         {pending ? "Joining…" : "Join the HHARA Circle"}
       </button>
+
+      <p className="mt-2 text-left font-sans font-light text-[10px] leading-[1.55] tracking-[0.03em] text-warm">
+        By joining, you agree to receive emails from HHARA. Unsubscribe anytime.
+      </p>
     </form>
   );
 }
 
-function Field(props: React.InputHTMLAttributes<HTMLInputElement>) {
+type FieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
+  label: string;
+};
+
+function LabeledField({ label, ...props }: FieldProps) {
   return (
-    <input
-      {...props}
-      className="w-full bg-transparent border-0 border-b border-ink/[0.14] focus:border-gold focus:outline-none focus:ring-0 py-3 text-[13px] font-light tracking-[0.04em] text-ink placeholder:text-warm/60 transition-colors duration-300"
-    />
+    <label className="block bg-bark px-4 py-2.5">
+      <span className="block font-sans font-semibold text-[9px] tracking-eyebrow uppercase text-gold">
+        {label}
+      </span>
+      <input
+        {...props}
+        className="mt-1 w-full bg-transparent border-0 p-0 focus:outline-none focus:ring-0 text-[13px] font-light tracking-[0.04em] text-cream-off placeholder:text-cream-off/40"
+      />
+    </label>
   );
 }
 
-function DateField(props: React.InputHTMLAttributes<HTMLInputElement>) {
-  // Native <input type="date"> uses the locale picker. Value is always ISO
-  // (YYYY-MM-DD) on submit, which the server action converts to DD/MM/YYYY.
+function LabeledDateField({ label, ...props }: FieldProps) {
   return (
-    <div className="relative">
-      <span
-        aria-hidden="true"
-        className="pointer-events-none absolute left-0 top-1/2 -translate-y-1/2 text-[13px] font-light tracking-[0.04em] text-warm/60 transition-opacity peer-[:not([data-empty='true'])]:opacity-0"
-      >
-        Date of birth
+    <label className="block bg-bark px-4 py-2.5">
+      <span className="block font-sans font-semibold text-[9px] tracking-eyebrow uppercase text-gold">
+        {label}
       </span>
       <input
         {...props}
         type="date"
         defaultValue=""
-        onChange={(e) =>
-          (e.currentTarget.dataset.empty = e.currentTarget.value
-            ? "false"
-            : "true")
-        }
-        data-empty="true"
-        className="peer w-full bg-transparent border-0 border-b border-ink/[0.14] focus:border-gold focus:outline-none focus:ring-0 py-3 text-[13px] font-light tracking-[0.04em] text-ink transition-colors duration-300 data-[empty=true]:text-transparent data-[empty=true]:[&::-webkit-datetime-edit]:opacity-0 [color-scheme:light] [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:invert-[0.4] [&::-webkit-calendar-picker-indicator]:sepia [&::-webkit-calendar-picker-indicator]:hue-rotate-[10deg]"
+        className="mt-1 w-full bg-transparent border-0 p-0 focus:outline-none focus:ring-0 text-[13px] font-light tracking-[0.04em] text-cream-off [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:cursor-pointer"
       />
-    </div>
+    </label>
   );
 }
 
