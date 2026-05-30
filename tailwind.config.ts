@@ -34,8 +34,8 @@ const config: Config = {
         ticker: "0.38em",
       },
       animation: {
-        marquee: "marquee 22s linear infinite",
-        "marquee-fast": "marquee 14s linear infinite",
+        marquee: "marquee 45s linear infinite",
+        "marquee-fast": "marquee 28s linear infinite",
       },
       keyframes: {
         marquee: {
