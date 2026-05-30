@@ -67,7 +67,7 @@ export function EarlyAccessForm() {
         {pending ? "Joining…" : "Join the HHARA Circle"}
       </button>
 
-      <p className="mt-2 text-left font-sans font-light text-[10px] leading-[1.55] tracking-[0.03em] text-warm">
+      <p className="mt-1.5 text-left font-sans font-light text-[10px] leading-[1.4] tracking-[0.03em] text-warm">
         By joining, you agree to receive emails from HHARA. Unsubscribe anytime.
       </p>
     </form>
@@ -80,13 +80,13 @@ type FieldProps = React.InputHTMLAttributes<HTMLInputElement> & {
 
 function LabeledField({ label, ...props }: FieldProps) {
   return (
-    <label className="block bg-bark px-4 py-2.5">
+    <label className="block">
       <span className="block font-sans font-semibold text-[9px] tracking-eyebrow uppercase text-gold">
         {label}
       </span>
       <input
         {...props}
-        className="mt-1 w-full bg-transparent border-0 p-0 focus:outline-none focus:ring-0 text-[13px] font-light tracking-[0.04em] text-cream-off placeholder:text-cream-off/40"
+        className="mt-1 w-full bg-transparent border-0 border-b border-ink/[0.14] focus:border-gold focus:outline-none focus:ring-0 py-2.5 text-[13px] font-light tracking-[0.04em] text-ink placeholder:text-warm/60 transition-colors duration-300"
       />
     </label>
   );
@@ -94,7 +94,7 @@ function LabeledField({ label, ...props }: FieldProps) {
 
 function LabeledDateField({ label, ...props }: FieldProps) {
   return (
-    <label className="block bg-bark px-4 py-2.5">
+    <label className="block">
       <span className="block font-sans font-semibold text-[9px] tracking-eyebrow uppercase text-gold">
         {label}
       </span>
@@ -102,7 +102,7 @@ function LabeledDateField({ label, ...props }: FieldProps) {
         {...props}
         type="date"
         defaultValue=""
-        className="mt-1 w-full bg-transparent border-0 p-0 focus:outline-none focus:ring-0 text-[13px] font-light tracking-[0.04em] text-cream-off [color-scheme:dark] [&::-webkit-calendar-picker-indicator]:opacity-70 [&::-webkit-calendar-picker-indicator]:cursor-pointer"
+        className="mt-1 w-full bg-transparent border-0 border-b border-ink/[0.14] focus:border-gold focus:outline-none focus:ring-0 py-2 text-[13px] font-light tracking-[0.04em] text-ink transition-colors duration-300 [color-scheme:light] [&::-webkit-calendar-picker-indicator]:opacity-60 [&::-webkit-calendar-picker-indicator]:cursor-pointer [&::-webkit-calendar-picker-indicator]:invert-[0.4] [&::-webkit-calendar-picker-indicator]:sepia [&::-webkit-calendar-picker-indicator]:hue-rotate-[10deg]"
       />
     </label>
   );
