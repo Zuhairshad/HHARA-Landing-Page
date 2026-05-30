@@ -14,7 +14,7 @@ export function Marquee() {
 
   return (
     <div className="relative z-10 w-full bg-ticker py-3 overflow-hidden">
-      <div className="flex whitespace-nowrap animate-marquee will-change-transform">
+      <div className="flex whitespace-nowrap animate-marquee-fast md:animate-marquee will-change-transform">
         {loop.map((text, i) => (
           <span
             key={i}
